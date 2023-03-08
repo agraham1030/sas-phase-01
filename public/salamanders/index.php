@@ -1,7 +1,12 @@
 <?php
   require_once('../../private/initialize.php'); 
 
-  $salamanders = array('id' => '1', 'salamanderName' => 'Red-Legged Salamander', 'id' => '2', 'salamanderName' => 'Pigeon Mountain Salamander', 'id' => '3', 'salamanderName' => 'ZigZag Salamander', 'id' => '4', 'salamanderName' => 'Slimy Salamander');
+  $salamanders = [
+    ['id' => '1', 'salamanderName' => 'Red-Legged Salamander'],
+    ['id' => '2', 'salamanderName' => 'Pigeon Mountain Salamander'],
+    ['id' => '3', 'salamanderName' => 'ZigZag Salamander'],
+    ['id' => '4', 'salamanderName' => 'Slimy Salamander'],
+  ];
 
   $pageTitle = 'Salamanders';
 
@@ -23,9 +28,9 @@
 
       <?php foreach($salamanders as $salamander) { ?>
         <tr>
-          <!-- <td>Display the salamander id</td> -->
-    	    <!-- <td>Display the salamander name</td> -->
-          <!-- Use url_for with show.php AND h(u) with the salamander['id'] -->
+          <td><?php echo h($salamander['id']); ?></td>
+    	    <td><?php echo h($salamander['salamanderName']); ?></td>
+          <td><a href="<?= urlFor('salamanders/show.php?id='.h(u($salamander['id'])));?>">View</a></td>
           <td><a href="#">Edit</a></td>
           <td><a href="#">Delete</a></td>
     	  </tr>

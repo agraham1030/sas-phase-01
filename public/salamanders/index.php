@@ -10,7 +10,7 @@
 
   $pageTitle = 'Salamanders';
 
-  include(SHARED_PATH . '/salamander-header.php');
+  include(SHARED_PATH.'/salamander-header.php');
 ?>
 
 <h1>Salamanders</h1>
